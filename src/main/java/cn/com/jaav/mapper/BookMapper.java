@@ -19,4 +19,6 @@ public interface BookMapper
     Book queryBookById(int id);
     //增加所有书
     List<Book> queryAllBook();
+    //根據書名字查詢
+    Book queryBookByName(String name);
 }

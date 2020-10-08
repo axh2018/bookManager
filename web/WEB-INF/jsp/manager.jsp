@@ -55,7 +55,6 @@
     </div>
 </div>
 
-</body>
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
@@ -71,7 +70,21 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             新增
         </button>
+        <a href="${pageContext.request.contextPath}/book/manager" class="btn btn-primary">
+            所有書籍
+        </a>
+            <span style="color: red;font-weight: bold">${error}</span>
         </div>
+
+        <div class="col-md-4 column" style="float: right">
+            <form method="post" action="${pageContext.request.contextPath}/book/queryBookByName">
+            <div class="col-xs-6">
+                <input type="text" name="bookName" class="form-control" placeholder="書籍名稱">
+            </div>
+                <input type="submit" class="btn btn-primary" value="搜索"/>
+            </form>
+        </div>
+
     </div>
     <div class="row clearfix">
         <div class="col-md-12 column">
@@ -103,3 +116,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

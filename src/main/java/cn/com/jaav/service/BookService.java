@@ -16,4 +16,6 @@ public interface BookService
     Book queryBookById(int id);
     //增加所有书
     List<Book> queryAllBook();
+    //根據名字查詢書籍
+    Book queryBookByName(String bookName);
 }

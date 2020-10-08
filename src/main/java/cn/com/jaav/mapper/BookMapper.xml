@@ -39,4 +39,9 @@
         SELECT * from ssmbuild.books
     </select>
 
+    <!--根據書名查询Book-->
+    <select id="queryBookByName" resultType="cn.com.jaav.pojo.Book">
+        select * from books where bookName = #{bookName}
+    </select>
+
 </mapper>

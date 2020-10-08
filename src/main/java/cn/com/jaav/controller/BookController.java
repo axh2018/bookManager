@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -68,6 +69,22 @@ public class BookController {
     public String queryBookById(int id, Model model) {
         Book book = bookService.queryBookById(id);
         model.addAttribute("bookInfo", book);
+        return "manager";
+    }
+
+    //搜索框
+    @RequestMapping("/queryBookByName")
+    public String queryBook(String bookName, Model model)
+    {
+        Book book = bookService.queryBookByName(bookName);
+        List<Book> list = new ArrayList<Book>();
+        list.add(book);
+        if (book == null)
+        {
+            list = bookService.queryAllBook();
+            model.addAttribute("error", "無結果");
+        }
+        model.addAttribute("list", list);
         return "manager";
     }
 }
