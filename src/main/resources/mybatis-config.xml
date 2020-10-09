@@ -4,8 +4,12 @@
 
 <configuration>
 
-    <!--<properties resource="db.properties"/>-->
+    <properties resource="db.properties"/>
 
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
     <typeAliases>
         <typeAlias type="cn.com.jaav.pojo.Book" alias="Book"/>
     </typeAliases>
@@ -14,14 +18,15 @@
         <environment id="local">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/ssmbuild"/>
-                <property name="username" value="root"/>
-                <property name="password" value="8546"/>
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${user}"/>
+                <property name="password" value="${password}"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
         <mapper resource="cn/com/jaav/mapper/BookMapper.xml"/>
+        <mapper resource="cn/com/jaav/mapper/UserMapper.xml"/>
     </mappers>
 </configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.com.jaav.mapper.UserMapper">
+
+    <!--注冊-->
+    <insert id="addUser" parameterType="cn.com.jaav.pojo.User">
+        insert into ssmbuild.user(username, passwd)
+        values (#{username},#{passwd})
+    </insert>
+    <!--登錄-->
+    <select id="queryUser" parameterType="cn.com.jaav.pojo.User" resultType="java.lang.Integer">
+        select count(username) from user where username=#{username} and passwd=#{passwd}
+    </select>
+</mapper>

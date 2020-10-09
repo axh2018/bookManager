@@ -2,26 +2,18 @@
 <html>
   <head>
     <title>主頁</title>
-    <style type="text/css">
-      a {
-        text-decoration: none;
-        color: black;
-        font-size: 18px;
-      }
-      h2 {
-        width: 180px;
-        height: 48px;
-        margin: 300px auto;
-        text-align: center;
-        line-height: 38px;
-        background: deepskyblue;
-        border-radius: 10px;
-      }
-    </style>
   </head>
   <body>
-  <h2>
-    <a href="${pageContext.request.contextPath}/book/manager">点击进入列表页</a>
-  </h2>
+<%--  <h2>--%>
+<%--    <a href="${pageContext.request.contextPath}/book/manager">点击进入列表页</a>--%>
+<%--  </h2>--%>
+  <div align="center">
+    <form action="${pageContext.request.contextPath}/user/login" method="post">
+      賬號：<input name="username">
+      密碼：<input type="password" name="passwd">
+      登錄：<input type="submit">
+    </form>
+    ${loginInfo}
+  </div>
   </body>
 </html>

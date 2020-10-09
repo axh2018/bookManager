@@ -1,7 +1,6 @@
 package cn.com.jaav.mapper;
 
 import cn.com.jaav.pojo.Book;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
